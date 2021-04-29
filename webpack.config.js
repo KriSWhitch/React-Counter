@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './containers/CounterContainer.jsx',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'main.js',
