@@ -1,3 +1,9 @@
+const displayFlex = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
 const styles = {
   button: {
     borderRadius: 3,
@@ -6,16 +12,12 @@ const styles = {
     margin: 10,
   },
   counter: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...displayFlex,
     flexDirection: 'column',
   },
   counter_display: {
     textAlign: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...displayFlex,
     border: '1px solid black',
     borderTopLeftRadius: 3,
     borderTopRightRadius: 3,
@@ -24,9 +26,7 @@ const styles = {
   },
   counter_control_panel: {
     width: '500px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...displayFlex,
     border: '1px solid black',
     borderBottomLeftRadius: 3,
     borderBottomRightRadius: 3,
