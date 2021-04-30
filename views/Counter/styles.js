@@ -1,7 +1,4 @@
-// Импортируем метод для создания функции, вызвав которую мы получим функцию для генерации классов
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
+const styles = {
   button: {
     borderRadius: 3,
     height: 48,
@@ -38,6 +35,6 @@ const useStyles = makeStyles({
     fontSize: '30px',
     color: 'black',
   },
-});
+};
 
-export default useStyles;
+export default styles;
