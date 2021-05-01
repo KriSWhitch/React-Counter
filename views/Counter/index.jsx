@@ -23,6 +23,15 @@ class Counter extends React.Component {
     this.setState(() => ({ counterValue: 0 }));
   }
 
+  handleUpdate() {
+    const { counterValue } = this.state;
+    if (counterValue % 2 === 0) {
+      this.setState((state) => ({ counterValue: state.counterValue + 1 }));
+    } else {
+      this.setState((state) => ({ counterValue: state.counterValue - 1 }));
+    }
+  }
+
   render() {
     const { classes } = this.props;
     const { counterValue } = this.state;

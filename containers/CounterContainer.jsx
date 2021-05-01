@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from '../views/Counter/index';
+import CounterParent from '../views/Counter/CounterParent';
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.render(<CounterParent />, document.getElementById('root'));
