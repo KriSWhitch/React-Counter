@@ -1,46 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
-import styles from './styles';
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/jsx-filename-extension */
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
+import styles from "./styles";
 
 class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
-    this.state = { counterValue: 0 };
-  }
-
-  handleIncrement() {
-    this.setState((state) => ({ counterValue: state.counterValue + 1 }));
-  }
-
-  handleDecrement() {
-    this.setState((state) => ({ counterValue: state.counterValue - 1 }));
-  }
-
-  handleReset() {
-    this.setState(() => ({ counterValue: 0 }));
-  }
-
   render() {
     const { classes } = this.props;
-    const { counterValue } = this.state;
-
     return (
       <div className={classes.counter} id="counter">
         <div className={classes.counter_display} id="counter-display">
           <p className={classes.counter_value} id="counter-display-value">
-            {counterValue}
+            {this.props.counterValue}
           </p>
         </div>
-        <div className={classes.counter_control_panel} id="counter-control-panel">
+        <div
+          className={classes.counter_control_panel}
+          id="counter-control-panel"
+        >
           <Button
             variant="outlined"
             color="primary"
             className={classes.button}
             id="increment-counter-btn"
-            onClick={() => this.handleIncrement()}
+            onClick={() => this.props.handleIncrement()}
           >
             Increment
           </Button>
@@ -49,7 +34,7 @@ class Counter extends React.Component {
             color="secondary"
             className={classes.button}
             id="decrement-counter-btn"
-            onClick={() => this.handleDecrement()}
+            onClick={() => this.props.handleDecrement()}
           >
             Decrement
           </Button>
@@ -57,7 +42,7 @@ class Counter extends React.Component {
             variant="outlined"
             className={classes.button}
             id="reset-counter-btn"
-            onClick={() => this.handleReset()}
+            onClick={() => this.props.handleReset()}
           >
             Reset
           </Button>
@@ -68,8 +53,9 @@ class Counter extends React.Component {
 }
 
 Counter.propTypes = {
-  name: PropTypes.string,
+  handleIncrement: PropTypes.isRequired,
+  handleDecrement: PropTypes.isRequired,
+  handleReset: PropTypes.isRequired,
 };
 
-// Опрокидываем в пропс объект стилей
 export default withStyles(styles)(Counter);
