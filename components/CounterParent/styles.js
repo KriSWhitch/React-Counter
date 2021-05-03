@@ -11,19 +11,6 @@ const styles = {
     padding: '0 10px',
     borderRadius: 3,
   },
-  counter: {
-    ...displayFlex,
-    flexDirection: 'column',
-  },
-  counter_display: {
-    ...displayFlex,
-    width: '500px',
-    height: '200px',
-    textAlign: 'center',
-    border: '1px solid black',
-    borderTopLeftRadius: 3,
-    borderTopRightRadius: 3,
-  },
   counter_control_panel: {
     ...displayFlex,
     width: '500px',
