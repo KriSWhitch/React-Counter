@@ -1,13 +1,13 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   entry: './index.js',
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'main.js',
+    path: path.join(__dirname, "build"),
+    filename: "main.js",
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.join(__dirname, "build"),
     compress: true,
     port: 9000,
     watchContentBase: true,
@@ -16,8 +16,8 @@ module.exports = {
     open: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    modules: [path.resolve('node_modules'), 'node_modules'],
+    extensions: [".js", ".jsx"],
+    modules: [path.resolve("node_modules"), "node_modules"],
   },
   module: {
     rules: [
@@ -25,15 +25,15 @@ module.exports = {
         test: /\.m?(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
         },
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          "style-loader",
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: true,
             },
@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
+        use: ["file-loader"],
       },
     ],
   },
