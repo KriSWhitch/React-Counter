@@ -1,10 +1,10 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/jsx-filename-extension */
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
-import styles from "./styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
+import styles from './styles';
 
 class Counter extends React.Component {
   render() {
@@ -16,10 +16,7 @@ class Counter extends React.Component {
             {this.props.counterValue}
           </p>
         </div>
-        <div
-          className={classes.counter_control_panel}
-          id="counter-control-panel"
-        >
+        <div className={classes.counter_control_panel} id="counter-control-panel">
           <Button
             variant="outlined"
             color="primary"
@@ -53,6 +50,7 @@ class Counter extends React.Component {
 }
 
 Counter.propTypes = {
+  counterValue: PropTypes.isRequired,
   handleIncrement: PropTypes.isRequired,
   handleDecrement: PropTypes.isRequired,
   handleReset: PropTypes.isRequired,
