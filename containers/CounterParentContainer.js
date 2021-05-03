@@ -37,7 +37,7 @@ export default class CounterParentContainer extends React.Component {
   }
 
   handleResetCounters() {
-    countersArray = [<CounterContainer counterValue={0} />];
+    countersArray = [<CounterContainer />];
     this.setState(() => ({
       counters: [...countersArray],
     }));
