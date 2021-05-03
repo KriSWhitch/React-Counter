@@ -1,10 +1,10 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
-import PropTypes from 'prop-types';
-import styles from './styles';
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
+import PropTypes from "prop-types";
+import styles from "./styles";
 
 class CounterParent extends React.Component {
   render() {
@@ -21,7 +21,10 @@ class CounterParent extends React.Component {
             ))}
           </ul>
         </div>
-        <div className={classes.counter_control_panel} id="counter-control-panel">
+        <div
+          className={classes.counter_control_panel}
+          id="counter-control-panel"
+        >
           <Button
             variant="outlined"
             color="primary"
@@ -36,7 +39,9 @@ class CounterParent extends React.Component {
             color="secondary"
             className={classes.button}
             id="decrement-counter-btn"
-            onClick={() => this.props.handleRemoveCounter(this.props.counters.length)}
+            onClick={() =>
+              this.props.handleRemoveCounter(this.props.counters.length)
+            }
           >
             Remove Counter
           </Button>

@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import Counter from '../components/Counter/index';
+import React from "react";
+import Counter from "../components/Counter/index";
 
 export default class CounterContainer extends React.Component {
   constructor(props) {
