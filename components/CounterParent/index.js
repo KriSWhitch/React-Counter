@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import PropTypes from "prop-types";
 import styles from "./styles";
+import CounterContainer from "../../containers/CounterContainer";
 
 class CounterParent extends React.Component {
   render() {
@@ -16,7 +17,13 @@ class CounterParent extends React.Component {
           <ul className={classes.counters_list} id="counters-list">
             {this.props.counters.map((counter, index) => (
               <li className={classes.counters_list_element} key={index}>
-                {counter}
+                <CounterContainer
+                  handleIncrement={this.props.handleIncrement}
+                  handleDecrement={this.props.handleDecrement}
+                  handleReset={this.props.handleReset}
+                  index={index}
+                  counterValue={counter}
+                />
               </li>
             ))}
           </ul>

@@ -10,7 +10,7 @@ export default class CounterParentContainer extends React.Component {
     super(props);
     this.props = props;
     this.state = {
-      counters: [<CounterContainer />],
+      counters: [0],
     };
   }
 
@@ -19,23 +19,39 @@ export default class CounterParentContainer extends React.Component {
   componentWillUnmount() {}
 
   handleCreateCounter() {
-    this.setState(() => ({
-      counters: this.state.counters.concat([<CounterContainer />]),
-    }));
+    const array = this.state.counters;
+    array.push(0);
+    this.setState({ counters: array });
   }
 
   handleRemoveCounter(countersLength) {
     if (countersLength > 1) {
-      this.setState(() => ({
-        counters: this.state.counters.slice(1),
-      }));
+      const array = this.state.counters;
+      array.shift();
+      this.setState({ counters: array });
     }
   }
 
   handleResetCounters() {
-    this.setState(() => ({
-      counters: [<CounterContainer />],
-    }));
+    this.setState({ counters: [0] });
+  }
+
+  handleIncrement(index) {
+    const array = this.state.counters;
+    array[index] = array[index] + 1;
+    this.setState({ counters: array });
+  }
+
+  handleDecrement(index) {
+    const array = this.state.counters;
+    array[index] = array[index] - 1;
+    this.setState({ counters: array });
+  }
+
+  handleReset(index) {
+    const array = this.state.counters;
+    array[index] = 0;
+    this.setState({ counters: array });
   }
 
   render() {
@@ -45,6 +61,9 @@ export default class CounterParentContainer extends React.Component {
         handleCreateCounter={this.handleCreateCounter.bind(this)}
         handleRemoveCounter={this.handleRemoveCounter.bind(this)}
         handleResetCounters={this.handleResetCounters.bind(this)}
+        handleIncrement={this.handleIncrement.bind(this)}
+        handleDecrement={this.handleDecrement.bind(this)}
+        handleReset={this.handleReset.bind(this)}
       />
     );
   }

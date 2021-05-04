@@ -25,7 +25,7 @@ class Counter extends React.Component {
             color="primary"
             className={classes.button}
             id="increment-counter-btn"
-            onClick={() => this.props.handleIncrement()}
+            onClick={() => this.props.handleIncrement(this.props.index)}
           >
             Increment
           </Button>
@@ -34,7 +34,7 @@ class Counter extends React.Component {
             color="secondary"
             className={classes.button}
             id="decrement-counter-btn"
-            onClick={() => this.props.handleDecrement()}
+            onClick={() => this.props.handleDecrement(this.props.index)}
           >
             Decrement
           </Button>
@@ -42,7 +42,7 @@ class Counter extends React.Component {
             variant="outlined"
             className={classes.button}
             id="reset-counter-btn"
-            onClick={() => this.props.handleReset()}
+            onClick={() => this.props.handleReset(this.props.index)}
           >
             Reset
           </Button>
