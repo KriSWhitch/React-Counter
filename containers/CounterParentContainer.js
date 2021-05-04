@@ -5,14 +5,12 @@ import React from "react";
 import CounterParent from "../components/CounterParent/index";
 import CounterContainer from "./CounterContainer";
 
-let countersArray = [<CounterContainer />];
-
 export default class CounterParentContainer extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
     this.state = {
-      counters: [...countersArray],
+      counters: [<CounterContainer />],
     };
   }
 
@@ -21,25 +19,22 @@ export default class CounterParentContainer extends React.Component {
   componentWillUnmount() {}
 
   handleCreateCounter() {
-    countersArray.push([<CounterContainer />]);
     this.setState(() => ({
-      counters: [...countersArray],
+      counters: this.state.counters.concat([<CounterContainer />]),
     }));
   }
 
   handleRemoveCounter(countersLength) {
     if (countersLength > 1) {
-      countersArray.shift();
       this.setState(() => ({
-        counters: [...countersArray],
+        counters: this.state.counters.slice(1),
       }));
     }
   }
 
   handleResetCounters() {
-    countersArray = [<CounterContainer />];
     this.setState(() => ({
-      counters: [...countersArray],
+      counters: [<CounterContainer />],
     }));
   }
 
