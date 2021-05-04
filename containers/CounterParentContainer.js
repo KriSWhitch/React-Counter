@@ -20,6 +20,9 @@ export default class CounterParentContainer extends React.Component {
 
   handleCreateCounter() {
     const array = this.state.counters;
+    array.forEach((el, index) => {
+      if (el % 2 === 0) array[index] = el + 1;
+    }, array);
     array.push(0);
     this.setState({ counters: array });
   }
@@ -27,7 +30,10 @@ export default class CounterParentContainer extends React.Component {
   handleRemoveCounter(countersLength) {
     if (countersLength > 1) {
       const array = this.state.counters;
-      array.shift();
+      array.pop();
+      array.forEach((el, index) => {
+        if (el % 2 === 1) array[index] = el - 1;
+      }, array);
       this.setState({ counters: array });
     }
   }
