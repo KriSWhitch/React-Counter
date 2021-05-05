@@ -4,14 +4,27 @@
 import React from "react";
 import Counter from "../components/Counter/index";
 
-const CounterContainer = (props) => (
-  <Counter
-    counterValue={props.counterValue}
-    index={props.index}
-    handleIncrement={props.handleIncrement}
-    handleDecrement={props.handleDecrement}
-    handleReset={props.handleReset}
-  />
-);
+class CounterContainer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (this.props.counterValue === nextProps.counterValue) return false;
+    return true;
+  }
+
+  render() {
+    return (
+      <Counter
+        counterValue={this.props.counterValue}
+        index={this.props.index}
+        handleIncrement={this.props.handleIncrement}
+        handleDecrement={this.props.handleDecrement}
+        handleReset={this.props.handleReset}
+      />
+    );
+  }
+}
 
 export default CounterContainer;
