@@ -44,6 +44,8 @@ CounterContainer.propTypes = {
   handleIncrement: PropTypes.isRequired,
   handleDecrement: PropTypes.isRequired,
   handleReset: PropTypes.isRequired,
+  handleEvenCouners: PropTypes.isRequired,
+  handleOddCouners: PropTypes.isRequired,
 };
 
 export default CounterContainer;
