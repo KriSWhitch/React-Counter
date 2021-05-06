@@ -3,7 +3,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import CounterParent from "../components/CounterParent/index";
-import CounterContainer from "./CounterContainer";
 
 export default class CounterParentContainer extends React.Component {
   constructor(props) {
@@ -20,9 +19,6 @@ export default class CounterParentContainer extends React.Component {
 
   handleCreateCounter() {
     const array = this.state.counters;
-    array.forEach((el, index) => {
-      if (el % 2 === 0) array[index] = el + 1;
-    }, array);
     array.push(0);
     this.setState({ counters: array });
   }
@@ -31,9 +27,6 @@ export default class CounterParentContainer extends React.Component {
     if (countersLength > 1) {
       const array = this.state.counters;
       array.pop();
-      array.forEach((el, index) => {
-        if (el % 2 === 1) array[index] = el - 1;
-      }, array);
       this.setState({ counters: array });
     }
   }
@@ -60,9 +53,22 @@ export default class CounterParentContainer extends React.Component {
     this.setState({ counters: array });
   }
 
+  handleEvenCouners(index) {
+    const array = this.state.counters;
+    if (Math.abs(array[index]) % 2 === 0) array[index] = array[index] + 1;
+    this.setState({ counters: array });
+  }
+
+  handleOddCouners(index) {
+    const array = this.state.counters;
+    if (Math.abs(array[index]) % 2 === 1) array[index] = array[index] - 1;
+    this.setState({ counters: array });
+  }
+
   render() {
     return (
       <CounterParent
+        countersLength={this.state.counters.length}
         counters={this.state.counters}
         handleCreateCounter={this.handleCreateCounter.bind(this)}
         handleRemoveCounter={this.handleRemoveCounter.bind(this)}
@@ -70,6 +76,8 @@ export default class CounterParentContainer extends React.Component {
         handleIncrement={this.handleIncrement.bind(this)}
         handleDecrement={this.handleDecrement.bind(this)}
         handleReset={this.handleReset.bind(this)}
+        handleEvenCouners={this.handleEvenCouners.bind(this)}
+        handleOddCouners={this.handleOddCouners.bind(this)}
       />
     );
   }

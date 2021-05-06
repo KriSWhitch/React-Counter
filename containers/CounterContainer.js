@@ -9,6 +9,15 @@ class CounterContainer extends React.Component {
     super(props);
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const { countersLength, index } = this.props;
+    if (countersLength < nextProps.countersLength) {
+      this.props.handleEvenCouners(index);
+    } else if (countersLength > nextProps.countersLength) {
+      this.props.handleOddCouners(index);
+    }
+  }
+
   shouldComponentUpdate(nextProps) {
     if (this.props.counterValue === nextProps.counterValue) return false;
     return true;

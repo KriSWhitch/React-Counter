@@ -23,6 +23,9 @@ class CounterParent extends React.Component {
                   handleReset={this.props.handleReset}
                   index={index}
                   counterValue={counter}
+                  countersLength={this.props.countersLength}
+                  handleEvenCouners={this.props.handleEvenCouners}
+                  handleOddCouners={this.props.handleOddCouners}
                 />
               </li>
             ))}
