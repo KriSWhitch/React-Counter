@@ -9,23 +9,35 @@ import CounterContainer from "../../containers/CounterContainer";
 
 class CounterParent extends React.Component {
   render() {
-    const { classes } = this.props;
+    const {
+      classes,
+      counters,
+      handleIncrement,
+      handleDecrement,
+      handleReset,
+      countersLength,
+      handleEvenCouners,
+      handleOddCouners,
+      handleCreateCounter,
+      handleRemoveCounter,
+      handleResetCounters,
+    } = this.props;
 
     return (
       <div className={classes.counter_parent} id="counter-parent">
         <div className={classes.counters_container} id="counters-container">
           <ul className={classes.counters_list} id="counters-list">
-            {this.props.counters.map((counter, index) => (
+            {counters.map((counter, index) => (
               <li className={classes.counters_list_element} key={index}>
                 <CounterContainer
-                  handleIncrement={this.props.handleIncrement}
-                  handleDecrement={this.props.handleDecrement}
-                  handleReset={this.props.handleReset}
+                  handleIncrement={handleIncrement}
+                  handleDecrement={handleDecrement}
+                  handleReset={handleReset}
                   index={index}
                   counterValue={counter}
-                  countersLength={this.props.countersLength}
-                  handleEvenCouners={this.props.handleEvenCouners}
-                  handleOddCouners={this.props.handleOddCouners}
+                  countersLength={countersLength}
+                  handleEvenCouners={handleEvenCouners}
+                  handleOddCouners={handleOddCouners}
                 />
               </li>
             ))}
@@ -40,7 +52,7 @@ class CounterParent extends React.Component {
             color="primary"
             className={classes.button}
             id="increment-counter-btn"
-            onClick={() => this.props.handleCreateCounter()}
+            onClick={() => handleCreateCounter()}
           >
             Add Counter
           </Button>
@@ -49,9 +61,7 @@ class CounterParent extends React.Component {
             color="secondary"
             className={classes.button}
             id="decrement-counter-btn"
-            onClick={() =>
-              this.props.handleRemoveCounter(this.props.counters.length)
-            }
+            onClick={() => handleRemoveCounter(counters.length)}
           >
             Remove Counter
           </Button>
@@ -59,7 +69,7 @@ class CounterParent extends React.Component {
             variant="outlined"
             className={classes.button}
             id="reset-counter-btn"
-            onClick={() => this.props.handleResetCounters()}
+            onClick={() => handleResetCounters()}
           >
             Reset Counters
           </Button>
@@ -74,6 +84,12 @@ CounterParent.propTypes = {
   handleCreateCounter: PropTypes.isRequired,
   handleRemoveCounter: PropTypes.isRequired,
   handleResetCounters: PropTypes.isRequired,
+  handleIncrement: PropTypes.isRequired,
+  handleDecrement: PropTypes.isRequired,
+  handleReset: PropTypes.isRequired,
+  countersLength: PropTypes.isRequired,
+  handleEvenCouners: PropTypes.isRequired,
+  handleOddCouners: PropTypes.isRequired,
 };
 
 // Опрокидываем в пропс объект стилей

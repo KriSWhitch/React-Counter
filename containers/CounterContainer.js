@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-filename-extension */
 import React from "react";
+import PropTypes from "prop-types";
 import Counter from "../components/Counter/index";
 
 class CounterContainer extends React.Component {
@@ -35,5 +36,14 @@ class CounterContainer extends React.Component {
     );
   }
 }
+
+CounterContainer.propTypes = {
+  countersLength: PropTypes.isRequired,
+  counterValue: PropTypes.isRequired,
+  index: PropTypes.isRequired,
+  handleIncrement: PropTypes.isRequired,
+  handleDecrement: PropTypes.isRequired,
+  handleReset: PropTypes.isRequired,
+};
 
 export default CounterContainer;

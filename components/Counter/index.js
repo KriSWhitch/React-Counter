@@ -8,12 +8,19 @@ import styles from "./styles";
 
 class Counter extends React.Component {
   render() {
-    const { classes } = this.props;
+    const {
+      classes,
+      counterValue,
+      handleIncrement,
+      handleDecrement,
+      handleReset,
+      index,
+    } = this.props;
     return (
       <div className={classes.counter} id="counter">
         <div className={classes.counter_display} id="counter-display">
           <p className={classes.counter_value} id="counter-display-value">
-            {this.props.counterValue}
+            {counterValue}
           </p>
         </div>
         <div
@@ -25,7 +32,7 @@ class Counter extends React.Component {
             color="primary"
             className={classes.button}
             id="increment-counter-btn"
-            onClick={() => this.props.handleIncrement(this.props.index)}
+            onClick={() => handleIncrement(index)}
           >
             Increment
           </Button>
@@ -34,7 +41,7 @@ class Counter extends React.Component {
             color="secondary"
             className={classes.button}
             id="decrement-counter-btn"
-            onClick={() => this.props.handleDecrement(this.props.index)}
+            onClick={() => handleDecrement(index)}
           >
             Decrement
           </Button>
@@ -42,7 +49,7 @@ class Counter extends React.Component {
             variant="outlined"
             className={classes.button}
             id="reset-counter-btn"
-            onClick={() => this.props.handleReset(this.props.index)}
+            onClick={() => handleReset(index)}
           >
             Reset
           </Button>
@@ -53,6 +60,7 @@ class Counter extends React.Component {
 }
 
 Counter.propTypes = {
+  index: PropTypes.isRequired,
   counterValue: PropTypes.isRequired,
   handleIncrement: PropTypes.isRequired,
   handleDecrement: PropTypes.isRequired,
