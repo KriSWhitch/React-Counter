@@ -1,6 +1,14 @@
 /* eslint-disable react/jsx-filename-extension */
-import ReactDOM from 'react-dom';
-import React from 'react';
-import CounterParentContainer from './containers/CounterParentContainer';
+import ReactDOM from "react-dom";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Main from "./components/Main/index";
 
-ReactDOM.render(<CounterParentContainer />, document.getElementById('root'));
+const App = () => <Main />;
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
