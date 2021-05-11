@@ -1,5 +1,3 @@
-/* eslint-disable react/prefer-stateless-function */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
@@ -11,30 +9,32 @@ class About extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.about}>
-        <div className={classes.header_cointainer} id="home-container">
-          <Button className={(classes.button, classes.button_active)}>
+        <div className={classes["header-cointainer"]} id="home-container">
+          <Button className={(classes.button, classes["button-active"])}>
             <Link
-              className={(classes.button_link, classes.button_link_active)}
+              className={
+                (classes["button-link"], classes["button-link-active"])
+              }
               to="/about"
             >
               About
             </Link>
           </Button>
           <Button className={classes.button}>
-            <Link className={classes.button_link} to="/counters">
+            <Link className={classes["button-link"]} to="/counters">
               Counters
             </Link>
           </Button>
         </div>
-        <div className={classes.about_container} id="about-container">
+        <div className={classes["about-container"]} id="about-container">
           <h2
-            className={classes.about_container_title}
+            className={classes["about-container-title"]}
             id="about-container-title"
           >
             About Us
           </h2>
           <p
-            className={classes.about_container_subtitle}
+            className={classes["about-container-subtitle"]}
             id="about-container-subtitle"
           >
             Tokyo Creative is dedicated to creating content that provides a

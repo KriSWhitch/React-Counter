@@ -1,16 +1,12 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-undef */
-/* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import CounterParent from '../components/CounterParent/index';
-import CounterContainer from './CounterContainer';
+import React from "react";
+import CounterParent from "../components/CounterParent/index";
 
 export default class CounterParentContainer extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
     this.state = {
-      counters: [<CounterContainer />],
+      counters: [0],
     };
   }
 
@@ -19,28 +15,75 @@ export default class CounterParentContainer extends React.Component {
   componentWillUnmount() {}
 
   handleCreateCounter() {
-    this.setState((state) => ({ counters: state.counters.concat([<CounterContainer />]) }));
+    const { counters } = this.state;
+    const array = counters;
+    array.push(0);
+    this.setState({ counters: array });
   }
 
   handleRemoveCounter(countersLength) {
     if (countersLength > 1) {
-      this.setState((state) => ({
-        counters: state.counters.slice(1),
-      })); // должно возвращать тот же массив, но без первого элемента
+      const { counters } = this.state;
+      const array = counters;
+      array.pop();
+      this.setState({ counters: array });
     }
   }
 
   handleResetCounters() {
-    this.setState(() => ({ counters: [<CounterContainer />] }));
-  } // ожидал того что так мы сможем отобразить новый и единственный Counter, однако у него остаётся старое значение счётчика
+    this.setState({ counters: [0] });
+  }
+
+  handleIncrement(index) {
+    const { counters } = this.state;
+    const array = counters;
+    array[index] = array[index]++;
+    this.setState({ counters: array });
+  }
+
+  handleDecrement(index) {
+    const { counters } = this.state;
+    const array = counters;
+    array[index] = array[index]--;
+    this.setState({ counters: array });
+  }
+
+  handleReset(index) {
+    const { counters } = this.state;
+    const array = counters;
+    array[index] = 0;
+    this.setState({ counters: array });
+  }
+
+  handleEvenCouners(index) {
+    const { counters } = this.state;
+    const array = counters;
+    if (Math.abs(array[index]) % 2 === 0) array[index] = array[index]++;
+    this.setState({ counters: array });
+  }
+
+  handleOddCouners(index) {
+    const { counters } = this.state;
+    const array = counters;
+    if (Math.abs(array[index]) % 2 === 1) array[index] = array[index]--;
+    this.setState({ counters: array });
+  }
 
   render() {
+    const { counters } = this.state;
+
     return (
       <CounterParent
-        counters={this.state.counters}
+        countersLength={counters.length}
+        counters={counters}
         handleCreateCounter={this.handleCreateCounter.bind(this)}
         handleRemoveCounter={this.handleRemoveCounter.bind(this)}
         handleResetCounters={this.handleResetCounters.bind(this)}
+        handleIncrement={this.handleIncrement.bind(this)}
+        handleDecrement={this.handleDecrement.bind(this)}
+        handleReset={this.handleReset.bind(this)}
+        handleEvenCouners={this.handleEvenCouners.bind(this)}
+        handleOddCouners={this.handleOddCouners.bind(this)}
       />
     );
   }

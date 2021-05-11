@@ -15,7 +15,7 @@ const styles = {
     ...displayFlex,
     flexDirection: "column",
   },
-  counter_display: {
+  "counter-display": {
     ...displayFlex,
     width: "500px",
     height: "200px",
@@ -24,14 +24,14 @@ const styles = {
     borderTopLeftRadius: 3,
     borderTopRightRadius: 3,
   },
-  counter_control_panel: {
+  "counter-control-panel": {
     ...displayFlex,
     width: "500px",
     border: "1px solid black",
     borderBottomLeftRadius: 3,
     borderBottomRightRadius: 3,
   },
-  counter_value: {
+  "counter-value": {
     fontSize: "30px",
     color: "black",
   },

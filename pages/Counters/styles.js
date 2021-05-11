@@ -12,22 +12,22 @@ const styles = {
     border: "1px solid #f50057",
     borderRadius: 3,
   },
-  button_active: {
+  "button-active": {
     backgroundColor: "#f50057",
     padding: "10px 20px",
   },
-  button_link: {
+  "button-link": {
     textDecoration: "none",
     color: "#000000",
   },
-  button_link_active: {
+  "button-link-active": {
     color: "#ffffff",
   },
   counters: {
     ...displayFlex,
     flexDirection: "column",
   },
-  header_cointainer: {
+  "header-cointainer": {
     ...displayFlex,
   },
 };

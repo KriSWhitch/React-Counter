@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import About from "../../pages/About/index";
 import Home from "../../pages/Home/index";
 import ErrorPage from "../../pages/ErrorPage/index";

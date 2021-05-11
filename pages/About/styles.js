@@ -12,15 +12,15 @@ const styles = {
     border: "1px solid #f50057",
     borderRadius: 3,
   },
-  button_active: {
+  "button-active": {
     backgroundColor: "#f50057",
     padding: "10px 20px",
   },
-  button_link: {
+  "button-link": {
     textDecoration: "none",
     color: "#000000",
   },
-  button_link_active: {
+  "button-link-active": {
     color: "#ffffff",
   },
   about: {
@@ -28,17 +28,17 @@ const styles = {
     flexDirection: "column",
     textAlign: "center",
   },
-  header_cointainer: {
+  "header-cointainer": {
     ...displayFlex,
   },
-  about_container: {
+  "about-container": {
     ...displayFlex,
     flexDirection: "column",
   },
-  about_container_title: {
+  "about-container-title": {
     fontSize: "32px",
   },
-  about_container_subtitle: {
+  "about-container-subtitle": {
     fontSize: "16px",
   },
 };

@@ -5,12 +5,12 @@ const displayFlex = {
 };
 
 const styles = {
-  error_container: {
+  "error-container": {
     ...displayFlex,
     flexDirection: "column",
     textAlign: "center",
   },
-  error_container_title: {
+  "error-container-title": {
     fontSize: "32px",
   },
 };
