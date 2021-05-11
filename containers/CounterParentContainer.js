@@ -1,6 +1,3 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-undef */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import CounterParent from "../components/CounterParent/index";
 
@@ -18,14 +15,16 @@ export default class CounterParentContainer extends React.Component {
   componentWillUnmount() {}
 
   handleCreateCounter() {
-    const array = this.state.counters;
+    const { counters } = this.state;
+    const array = counters;
     array.push(0);
     this.setState({ counters: array });
   }
 
   handleRemoveCounter(countersLength) {
     if (countersLength > 1) {
-      const array = this.state.counters;
+      const { counters } = this.state;
+      const array = counters;
       array.pop();
       this.setState({ counters: array });
     }
@@ -36,40 +35,47 @@ export default class CounterParentContainer extends React.Component {
   }
 
   handleIncrement(index) {
-    const array = this.state.counters;
-    array[index] = array[index] + 1;
+    const { counters } = this.state;
+    const array = counters;
+    array[index] = array[index]++;
     this.setState({ counters: array });
   }
 
   handleDecrement(index) {
-    const array = this.state.counters;
-    array[index] = array[index] - 1;
+    const { counters } = this.state;
+    const array = counters;
+    array[index] = array[index]--;
     this.setState({ counters: array });
   }
 
   handleReset(index) {
-    const array = this.state.counters;
+    const { counters } = this.state;
+    const array = counters;
     array[index] = 0;
     this.setState({ counters: array });
   }
 
   handleEvenCouners(index) {
-    const array = this.state.counters;
-    if (Math.abs(array[index]) % 2 === 0) array[index] = array[index] + 1;
+    const { counters } = this.state;
+    const array = counters;
+    if (Math.abs(array[index]) % 2 === 0) array[index] = array[index]++;
     this.setState({ counters: array });
   }
 
   handleOddCouners(index) {
-    const array = this.state.counters;
-    if (Math.abs(array[index]) % 2 === 1) array[index] = array[index] - 1;
+    const { counters } = this.state;
+    const array = counters;
+    if (Math.abs(array[index]) % 2 === 1) array[index] = array[index]--;
     this.setState({ counters: array });
   }
 
   render() {
+    const { counters } = this.state;
+
     return (
       <CounterParent
-        countersLength={this.state.counters.length}
-        counters={this.state.counters}
+        countersLength={counters.length}
+        counters={counters}
         handleCreateCounter={this.handleCreateCounter.bind(this)}
         handleRemoveCounter={this.handleRemoveCounter.bind(this)}
         handleResetCounters={this.handleResetCounters.bind(this)}

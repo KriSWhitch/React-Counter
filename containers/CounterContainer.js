@@ -1,6 +1,3 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-undef */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import PropTypes from "prop-types";
 import Counter from "../components/Counter/index";
@@ -11,41 +8,55 @@ class CounterContainer extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    const { countersLength, index } = this.props;
+    const {
+      countersLength,
+      index,
+      handleEvenCouners,
+      handleOddCouners,
+    } = this.props;
     if (countersLength < nextProps.countersLength) {
-      this.props.handleEvenCouners(index);
+      handleEvenCouners(index);
     } else if (countersLength > nextProps.countersLength) {
-      this.props.handleOddCouners(index);
+      handleOddCouners(index);
     }
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.counterValue === nextProps.counterValue) return false;
+    const { counterValue } = this.props;
+    if (counterValue === nextProps.counterValue) return false;
     return true;
   }
 
   render() {
+    const {
+      counterValue,
+      index,
+      handleIncrement,
+      handleDecrement,
+      handleReset,
+    } = this.props;
+
     return (
       <Counter
-        counterValue={this.props.counterValue}
-        index={this.props.index}
-        handleIncrement={this.props.handleIncrement}
-        handleDecrement={this.props.handleDecrement}
-        handleReset={this.props.handleReset}
+        counterValue={counterValue}
+        index={index}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+        handleReset={handleReset}
       />
     );
   }
 }
 
 CounterContainer.propTypes = {
-  countersLength: PropTypes.isRequired,
-  counterValue: PropTypes.isRequired,
-  index: PropTypes.isRequired,
-  handleIncrement: PropTypes.isRequired,
-  handleDecrement: PropTypes.isRequired,
-  handleReset: PropTypes.isRequired,
-  handleEvenCouners: PropTypes.isRequired,
-  handleOddCouners: PropTypes.isRequired,
+  countersLength: PropTypes.number.isRequired,
+  counterValue: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
+  handleEvenCouners: PropTypes.func.isRequired,
+  handleOddCouners: PropTypes.func.isRequired,
 };
 
 export default CounterContainer;

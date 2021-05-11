@@ -1,5 +1,3 @@
-/* eslint-disable react/prefer-stateless-function */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -18,13 +16,13 @@ class Counter extends React.Component {
     } = this.props;
     return (
       <div className={classes.counter} id="counter">
-        <div className={classes.counter_display} id="counter-display">
-          <p className={classes.counter_value} id="counter-display-value">
+        <div className={classes["counter-display"]} id="counter-display">
+          <p className={classes["counter-value"]} id="counter-display-value">
             {counterValue}
           </p>
         </div>
         <div
-          className={classes.counter_control_panel}
+          className={classes["counter-control-panel"]}
           id="counter-control-panel"
         >
           <Button
@@ -60,11 +58,11 @@ class Counter extends React.Component {
 }
 
 Counter.propTypes = {
-  index: PropTypes.isRequired,
-  counterValue: PropTypes.isRequired,
-  handleIncrement: PropTypes.isRequired,
-  handleDecrement: PropTypes.isRequired,
-  handleReset: PropTypes.isRequired,
+  index: PropTypes.number.isRequired,
+  counterValue: PropTypes.number.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Counter);

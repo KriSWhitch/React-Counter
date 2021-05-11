@@ -1,10 +1,11 @@
 const path = require("path");
 
 module.exports = {
-  entry: './index.js',
+  entry: "./index.js",
   output: {
     path: path.join(__dirname, "build"),
     filename: "main.js",
+    publicPath: "/",
   },
   devServer: {
     contentBase: path.join(__dirname, "build"),
@@ -14,6 +15,7 @@ module.exports = {
     progress: true,
     overlay: true,
     open: true,
+    historyApiFallback: true,
   },
   resolve: {
     extensions: [".js", ".jsx"],

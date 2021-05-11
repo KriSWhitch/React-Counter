@@ -1,5 +1,3 @@
-/* eslint-disable react/prefer-stateless-function */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
@@ -24,11 +22,11 @@ class CounterParent extends React.Component {
     } = this.props;
 
     return (
-      <div className={classes.counter_parent} id="counter-parent">
-        <div className={classes.counters_container} id="counters-container">
-          <ul className={classes.counters_list} id="counters-list">
+      <div className={classes["counter-parent"]} id="counter-parent">
+        <div className={classes["counters-container"]} id="counters-container">
+          <ul className={classes["counters-list"]} id="counters-list">
             {counters.map((counter, index) => (
-              <li className={classes.counters_list_element} key={index}>
+              <li className={classes["counters-list-element"]} key={index}>
                 <CounterContainer
                   handleIncrement={handleIncrement}
                   handleDecrement={handleDecrement}
@@ -44,7 +42,7 @@ class CounterParent extends React.Component {
           </ul>
         </div>
         <div
-          className={classes.counter_control_panel}
+          className={classes["counter-control-panel"]}
           id="counter-control-panel"
         >
           <Button
@@ -80,17 +78,16 @@ class CounterParent extends React.Component {
 }
 
 CounterParent.propTypes = {
-  counters: PropTypes.isRequired,
-  handleCreateCounter: PropTypes.isRequired,
-  handleRemoveCounter: PropTypes.isRequired,
-  handleResetCounters: PropTypes.isRequired,
-  handleIncrement: PropTypes.isRequired,
-  handleDecrement: PropTypes.isRequired,
-  handleReset: PropTypes.isRequired,
-  countersLength: PropTypes.isRequired,
-  handleEvenCouners: PropTypes.isRequired,
+  counters: PropTypes.arrayOf(CounterContainer).isRequired,
+  handleCreateCounter: PropTypes.func.isRequired,
+  handleRemoveCounter: PropTypes.func.isRequired,
+  handleResetCounters: PropTypes.func.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
+  countersLength: PropTypes.number.isRequired,
+  handleEvenCouners: PropTypes.func.isRequired,
   handleOddCouners: PropTypes.isRequired,
 };
 
-// Опрокидываем в пропс объект стилей
 export default withStyles(styles)(CounterParent);
