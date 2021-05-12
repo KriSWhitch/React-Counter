@@ -9,7 +9,7 @@ class About extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.about}>
-        <div className={classes["header-cointainer"]} id="home-container">
+        <div className={classes["header-cointainer"]} id="header-container">
           <Button className={(classes.button, classes["button-active"])}>
             <Link
               className={
