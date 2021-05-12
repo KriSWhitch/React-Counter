@@ -12,9 +12,19 @@ const styles = {
     border: "1px solid #f50057",
     borderRadius: 3,
   },
-  counters: {
+  "button-active": {
+    backgroundColor: "#f50057",
+    padding: "10px 20px",
+  },
+  "button-link": {
+    textDecoration: "none",
+    color: "#000000",
+  },
+  "button-link-active": {
+    color: "#ffffff",
+  },
+  "header-cointainer": {
     ...displayFlex,
-    flexDirection: "column",
   },
 };
 
