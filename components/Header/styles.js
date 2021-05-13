@@ -5,23 +5,23 @@ const displayFlex = {
 };
 
 const styles = {
-  button: {
-    height: 48,
+  "button-link": {
+    ...displayFlex,
+    height: "32px",
     margin: 10,
     padding: "0 10px",
+    textDecoration: "none",
+    textAlign: "center",
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    color: "#000000",
     border: "1px solid #f50057",
     borderRadius: 3,
   },
-  "button-active": {
-    backgroundColor: "#f50057",
-    padding: "10px 20px",
-  },
-  "button-link": {
-    textDecoration: "none",
-    color: "#000000",
-  },
   "button-link-active": {
+    padding: "5px 15px",
     color: "#ffffff",
+    backgroundColor: "#f50057",
   },
   "header-cointainer": {
     ...displayFlex,
