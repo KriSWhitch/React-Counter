@@ -87,7 +87,7 @@ CounterParent.propTypes = {
   handleReset: PropTypes.func.isRequired,
   countersLength: PropTypes.number.isRequired,
   handleEvenCouners: PropTypes.func.isRequired,
-  handleOddCouners: PropTypes.isRequired,
+  handleOddCouners: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(CounterParent);

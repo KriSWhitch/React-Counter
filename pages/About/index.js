@@ -9,23 +9,6 @@ class About extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.about}>
-        <div className={classes["header-cointainer"]} id="home-container">
-          <Button className={(classes.button, classes["button-active"])}>
-            <Link
-              className={
-                (classes["button-link"], classes["button-link-active"])
-              }
-              to="/about"
-            >
-              About
-            </Link>
-          </Button>
-          <Button className={classes.button}>
-            <Link className={classes["button-link"]} to="/counters">
-              Counters
-            </Link>
-          </Button>
-        </div>
         <div className={classes["about-container"]} id="about-container">
           <h2
             className={classes["about-container-title"]}

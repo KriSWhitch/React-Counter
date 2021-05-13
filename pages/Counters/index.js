@@ -10,23 +10,6 @@ class Counters extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.counters}>
-        <div className={classes["header-cointainer"]} id="home-container">
-          <Button className={classes.button}>
-            <Link className={classes["button-link"]} to="/about">
-              About
-            </Link>
-          </Button>
-          <Button className={(classes.button, classes["button-active"])}>
-            <Link
-              className={
-                (classes["button-link"], classes["button-link-active"])
-              }
-              to="/counters"
-            >
-              Counters
-            </Link>
-          </Button>
-        </div>
         <CounterParentContainer />
       </div>
     );
