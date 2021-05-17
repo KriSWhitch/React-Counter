@@ -5,6 +5,7 @@ import Counter from "../components/Counter/index";
 class CounterContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {

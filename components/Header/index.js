@@ -8,7 +8,7 @@ class Header extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.about}>
-        <div className={classes["header-cointainer"]} id="header-container">
+        <div className={classes["header-cointainer"]}>
           <NavLink
             to="/about"
             className={classes["button-link"]}

@@ -9,17 +9,9 @@ class About extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.about}>
-        <div className={classes["about-container"]} id="about-container">
-          <h2
-            className={classes["about-container-title"]}
-            id="about-container-title"
-          >
-            About Us
-          </h2>
-          <p
-            className={classes["about-container-subtitle"]}
-            id="about-container-subtitle"
-          >
+        <div className={classes["about-container"]}>
+          <h2 className={classes["about-container-title"]}>About Us</h2>
+          <p className={classes["about-container-subtitle"]}>
             Tokyo Creative is dedicated to creating content that provides a
             unique insight into all aspects of Japanese culture and daily life.
             We work closely with local governmental organizations and manage

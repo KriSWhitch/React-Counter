@@ -12,19 +12,19 @@ const Authorization = (style) => {
   const validationsShema = yup.object().shape({
     email: yup
       .string()
-      .matches(REG_EXP, "email должен быть больше 6 символов!")
-      .email("Введите корректный email!")
-      .required("Обязательно для ввода!"),
+      .matches(REG_EXP, "The email must be at least 6 characters long!")
+      .email("Enter your correct email address!")
+      .required("Required!"),
     password: yup
       .string()
-      .typeError("Должно быть строкой!")
-      .matches(REG_EXP, "Пароль должен быть больше 6 символов!")
-      .required("Обязательно для ввода!"),
+      .typeError("The field must be a string!")
+      .matches(REG_EXP, "The password must be at least 6 characters long!")
+      .required("Required!"),
     confirmPassword: yup
       .string()
-      .matches(REG_EXP, "Пароль должен быть больше 6 символов!")
-      .oneOf([yup.ref("password")], "Пароли не совпадают!")
-      .required("Обязательно для ввода!"),
+      .matches(REG_EXP, "The password must be at least 6 characters long!")
+      .oneOf([yup.ref("password")], "Password mismatch!")
+      .required("Required!"),
   });
   return (
     <div>
@@ -58,7 +58,7 @@ const Authorization = (style) => {
                 <form className={classes.formContainer} onSubmit={handleSubmit}>
                   <p>
                     <label className={classes.label} htmlFor="email">
-                      Почта:
+                      E-mail:
                     </label>
                     <br />
                     <input
@@ -75,7 +75,7 @@ const Authorization = (style) => {
                   )}
                   <p>
                     <label className={classes.label} htmlFor="password">
-                      Пароль:
+                      Password:
                     </label>
                     <br />
                     <input
@@ -92,7 +92,7 @@ const Authorization = (style) => {
                   )}
                   <p>
                     <label className={classes.label} htmlFor="confirmPassword">
-                      Подтверждение пароля:
+                      Confirm Password:
                     </label>
                     <br />
                     <input
@@ -114,7 +114,7 @@ const Authorization = (style) => {
                     disabled={!isValid && !dirty}
                     type="submit"
                   >
-                    Войти
+                    Login
                   </Button>
                 </form>
               </div>

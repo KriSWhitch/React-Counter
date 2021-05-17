@@ -10,64 +10,60 @@ export default class CounterParentContainer extends React.Component {
     };
   }
 
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
-  handleCreateCounter() {
+  handleCreateCounter = () => {
     const { counters } = this.state;
     const array = counters;
     array.push(0);
     this.setState({ counters: array });
-  }
+  };
 
-  handleRemoveCounter(countersLength) {
+  handleRemoveCounter = (countersLength) => {
     if (countersLength > 1) {
       const { counters } = this.state;
       const array = counters;
       array.pop();
       this.setState({ counters: array });
     }
-  }
+  };
 
-  handleResetCounters() {
+  handleResetCounters = () => {
     this.setState({ counters: [0] });
-  }
+  };
 
-  handleIncrement(index) {
+  handleIncrement = (index) => {
     const { counters } = this.state;
     const array = counters;
     array[index] = array[index]++;
     this.setState({ counters: array });
-  }
+  };
 
-  handleDecrement(index) {
+  handleDecrement = (index) => {
     const { counters } = this.state;
     const array = counters;
     array[index] = array[index]--;
     this.setState({ counters: array });
-  }
+  };
 
-  handleReset(index) {
+  handleReset = (index) => {
     const { counters } = this.state;
     const array = counters;
     array[index] = 0;
     this.setState({ counters: array });
-  }
+  };
 
-  handleEvenCouners(index) {
+  handleEvenCouners = (index) => {
     const { counters } = this.state;
     const array = counters;
     if (Math.abs(array[index]) % 2 === 0) array[index] = array[index]++;
     this.setState({ counters: array });
-  }
+  };
 
-  handleOddCouners(index) {
+  handleOddCouners = (index) => {
     const { counters } = this.state;
     const array = counters;
     if (Math.abs(array[index]) % 2 === 1) array[index] = array[index]--;
     this.setState({ counters: array });
-  }
+  };
 
   render() {
     const { counters } = this.state;
@@ -76,14 +72,14 @@ export default class CounterParentContainer extends React.Component {
       <CounterParent
         countersLength={counters.length}
         counters={counters}
-        handleCreateCounter={this.handleCreateCounter.bind(this)}
-        handleRemoveCounter={this.handleRemoveCounter.bind(this)}
-        handleResetCounters={this.handleResetCounters.bind(this)}
-        handleIncrement={this.handleIncrement.bind(this)}
-        handleDecrement={this.handleDecrement.bind(this)}
-        handleReset={this.handleReset.bind(this)}
-        handleEvenCouners={this.handleEvenCouners.bind(this)}
-        handleOddCouners={this.handleOddCouners.bind(this)}
+        handleCreateCounter={this.handleCreateCounter}
+        handleRemoveCounter={this.handleRemoveCounter}
+        handleResetCounters={this.handleResetCounters}
+        handleIncrement={this.handleIncrement}
+        handleDecrement={this.handleDecrement}
+        handleReset={this.handleReset}
+        handleEvenCouners={this.handleEvenCouners}
+        handleOddCouners={this.handleOddCouners}
       />
     );
   }

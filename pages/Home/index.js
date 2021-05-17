@@ -9,7 +9,7 @@ class Home extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.home}>
-        <div className={classes["home-cointainer"]} id="home-container">
+        <div className={classes["home-cointainer"]}>
           <h1 className={classes["home-cointainer-title"]}>Main Page</h1>
         </div>
       </div>

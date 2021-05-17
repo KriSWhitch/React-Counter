@@ -22,9 +22,9 @@ class CounterParent extends React.Component {
     } = this.props;
 
     return (
-      <div className={classes["counter-parent"]} id="counter-parent">
-        <div className={classes["counters-container"]} id="counters-container">
-          <ul className={classes["counters-list"]} id="counters-list">
+      <div className={classes["counter-parent"]}>
+        <div className={classes["counters-container"]}>
+          <ul className={classes["counters-list"]}>
             {counters.map((counter, index) => (
               <li className={classes["counters-list-element"]} key={index}>
                 <CounterContainer
@@ -41,15 +41,11 @@ class CounterParent extends React.Component {
             ))}
           </ul>
         </div>
-        <div
-          className={classes["counter-control-panel"]}
-          id="counter-control-panel"
-        >
+        <div className={classes["counter-control-panel"]}>
           <Button
             variant="outlined"
             color="primary"
             className={classes.button}
-            id="increment-counter-btn"
             onClick={() => handleCreateCounter()}
           >
             Add Counter
@@ -58,7 +54,6 @@ class CounterParent extends React.Component {
             variant="outlined"
             color="secondary"
             className={classes.button}
-            id="decrement-counter-btn"
             onClick={() => handleRemoveCounter(counters.length)}
           >
             Remove Counter
@@ -66,7 +61,6 @@ class CounterParent extends React.Component {
           <Button
             variant="outlined"
             className={classes.button}
-            id="reset-counter-btn"
             onClick={() => handleResetCounters()}
           >
             Reset Counters

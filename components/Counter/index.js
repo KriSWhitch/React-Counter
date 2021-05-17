@@ -15,21 +15,19 @@ class Counter extends React.Component {
       index,
     } = this.props;
     return (
-      <div className={classes.counter} id="counter">
-        <div className={classes["counter-display"]} id="counter-display">
-          <p className={classes["counter-value"]} id="counter-display-value">
+      <div className={classes.counter}>
+        <div className={classes["counter-display"]}>
+          <p className={classes["counter-value"]}>
             {counterValue}
           </p>
         </div>
         <div
           className={classes["counter-control-panel"]}
-          id="counter-control-panel"
         >
           <Button
             variant="outlined"
             color="primary"
             className={classes.button}
-            id="increment-counter-btn"
             onClick={() => handleIncrement(index)}
           >
             Increment
@@ -38,7 +36,6 @@ class Counter extends React.Component {
             variant="outlined"
             color="secondary"
             className={classes.button}
-            id="decrement-counter-btn"
             onClick={() => handleDecrement(index)}
           >
             Decrement
@@ -46,7 +43,6 @@ class Counter extends React.Component {
           <Button
             variant="outlined"
             className={classes.button}
-            id="reset-counter-btn"
             onClick={() => handleReset(index)}
           >
             Reset

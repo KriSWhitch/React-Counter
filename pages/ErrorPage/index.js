@@ -6,7 +6,7 @@ class ErrorPage extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes["error-container"]} id="error-container">
+      <div className={classes["error-container"]}>
         <h1 className={classes["error-container-title"]}>
           404 - Page Not Found
         </h1>

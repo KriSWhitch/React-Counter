@@ -11,10 +11,10 @@ const DisplayFormikState = (props) => (
       <strong>e-mail:</strong>
       {JSON.stringify(props.values.email, null, 2)}
       <br />
-      <strong>пароль:</strong>
+      <strong>password:</strong>
       {JSON.stringify(props.values.password, null, 2)}
       <br />
-      <strong>подтверждение пароля:</strong>
+      <strong>confirm password:</strong>
       {JSON.stringify(props.values.confirmPassword, null, 2)}
       <br />
     </div>
