@@ -1,7 +1,5 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import CounterParentContainer from "../../containers/CounterParentContainer";
 import styles from "./styles";
 

@@ -40,7 +40,7 @@ export default class CounterParentContainer extends React.Component {
   handleDecrement = (index) => {
     const { counters } = this.state;
     const array = counters;
-    array[index] = array[index]--;
+    array[index]--;
     this.setState({ counters: array });
   };
 
@@ -61,7 +61,7 @@ export default class CounterParentContainer extends React.Component {
   handleOddCouners = (index) => {
     const { counters } = this.state;
     const array = counters;
-    if (Math.abs(array[index]) % 2 === 1) array[index] = array[index]--;
+    if (Math.abs(array[index]) % 2 === 1) array[index]--;
     this.setState({ counters: array });
   };
 
