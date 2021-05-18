@@ -30,6 +30,13 @@ class Header extends React.Component {
           >
             Authorization
           </NavLink>
+          <NavLink
+            to="/login-redux"
+            className={classes["button-link"]}
+            activeClassName={classes["button-link-active"]}
+          >
+            Authorization Redux
+          </NavLink>
         </div>
       </div>
     );

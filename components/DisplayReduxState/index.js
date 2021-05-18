@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { string } from "prop-types";
+import PropTypes from "prop-types";
 
 class DisplayFormikState extends React.Component {
   constructor(props) {
@@ -8,7 +8,8 @@ class DisplayFormikState extends React.Component {
   }
 
   render() {
-    const { values } = this.props;
+    console.log(this.props);
+    const { email, password, confirmPassword } = this.props;
 
     return (
       <div style={{ margin: "1rem 0" }}>
@@ -19,13 +20,13 @@ class DisplayFormikState extends React.Component {
           }}
         >
           <strong>e-mail:</strong>
-          {JSON.stringify(values.email, null, 2)}
+          {JSON.stringify(email, null, 2)}
           <br />
           <strong>password:</strong>
-          {JSON.stringify(values.password, null, 2)}
+          {JSON.stringify(password, null, 2)}
           <br />
           <strong>confirm password:</strong>
-          {JSON.stringify(values.confirmPassword, null, 2)}
+          {JSON.stringify(confirmPassword, null, 2)}
           <br />
         </div>
       </div>
@@ -34,7 +35,6 @@ class DisplayFormikState extends React.Component {
 }
 
 DisplayFormikState.propTypes = {
-  values: PropTypes.arrayOf(string).isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   confirmPassword: PropTypes.string.isRequired,
