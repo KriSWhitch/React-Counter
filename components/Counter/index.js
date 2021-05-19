@@ -4,54 +4,48 @@ import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import styles from "./styles";
 
-class Counter extends React.Component {
-  render() {
-    const {
-      classes,
-      counterValue,
-      handleIncrement,
-      handleDecrement,
-      handleReset,
-      index,
-    } = this.props;
-    return (
-      <div className={classes.counter}>
-        <div className={classes["counter-display"]}>
-          <p className={classes["counter-value"]}>
-            {counterValue}
-          </p>
-        </div>
-        <div
-          className={classes["counter-control-panel"]}
-        >
-          <Button
-            variant="outlined"
-            color="primary"
-            className={classes.button}
-            onClick={() => handleIncrement(index)}
-          >
-            Increment
-          </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className={classes.button}
-            onClick={() => handleDecrement(index)}
-          >
-            Decrement
-          </Button>
-          <Button
-            variant="outlined"
-            className={classes.button}
-            onClick={() => handleReset(index)}
-          >
-            Reset
-          </Button>
-        </div>
+const Counter = (props) => {
+  const {
+    classes,
+    counterValue,
+    handleIncrement,
+    handleDecrement,
+    handleReset,
+    index,
+  } = props;
+  return (
+    <div className={classes.counter}>
+      <div className={classes.counterDisplay}>
+        <p className={classes.counterValue}>{counterValue}</p>
       </div>
-    );
-  }
-}
+      <div className={classes.counterControlPanel}>
+        <Button
+          variant="outlined"
+          color="primary"
+          className={classes.button}
+          onClick={() => handleIncrement(index)}
+        >
+          Increment
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          className={classes.button}
+          onClick={() => handleDecrement(index)}
+        >
+          Decrement
+        </Button>
+        <Button
+          variant="outlined"
+          className={classes.button}
+          onClick={() => handleReset(index)}
+        >
+          Reset
+        </Button>
+      </div>
+    </div>
+  );
+};
 
 Counter.propTypes = {
   index: PropTypes.number.isRequired,

@@ -11,36 +11,36 @@ const styles = {
     padding: "0 10px",
     borderRadius: 3,
   },
-  "counter-control-panel": {
+  counterControlPanel: {
     ...displayFlex,
     width: "500px",
     border: "1px solid black",
     borderBottomLeftRadius: 3,
     borderBottomRightRadius: 3,
   },
-  "counter-value": {
+  counterValue: {
     fontSize: "30px",
     color: "black",
   },
-  "counters-container": {
+  countersContainer: {
     ...displayFlex,
     flexDirection: "column",
     margin: "auto",
   },
-  "counter-parent": {
+  counterParent: {
     ...displayFlex,
     flexDirection: "column",
     margin: "auto",
     width: "600px",
   },
-  "counters-list": {
+  countersList: {
     ...displayFlex,
     flexDirection: "column",
     margin: "auto",
     padding: "0",
     listStyle: "none",
   },
-  "counters-list-element": {
+  countersListElement: {
     marginBottom: "10px",
   },
 };

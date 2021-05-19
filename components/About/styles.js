@@ -5,23 +5,23 @@ const displayFlex = {
 };
 
 const styles = {
-  button: {
-    height: 48,
-    margin: 10,
-    padding: "0 10px",
-    border: "1px solid #f50057",
-    borderRadius: 3,
+  about: {
+    ...displayFlex,
+    flexDirection: "column",
+    textAlign: "center",
   },
-  home: {
+  headerСointainer: {
+    ...displayFlex,
+  },
+  aboutContainer: {
     ...displayFlex,
     flexDirection: "column",
   },
-  "home-container": {
-    ...displayFlex,
-    flexDirection: "column",
-  },
-  "home-container-title": {
+  aboutСontainerTitle: {
     fontSize: "32px",
+  },
+  aboutСontainerSubtitle: {
+    fontSize: "16px",
   },
 };
 

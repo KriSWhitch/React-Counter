@@ -36,7 +36,7 @@ const styles = {
   label: {
     fontSize: "24px",
   },
-  "button-link": {
+  buttonLink: {
     ...displayFlex,
     height: "48px",
     width: "100%",

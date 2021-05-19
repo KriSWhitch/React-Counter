@@ -22,11 +22,11 @@ class CounterParent extends React.Component {
     } = this.props;
 
     return (
-      <div className={classes["counter-parent"]}>
-        <div className={classes["counters-container"]}>
-          <ul className={classes["counters-list"]}>
+      <div className={classes.counterParent}>
+        <div className={classes.countersContainer}>
+          <ul className={classes.countersList}>
             {counters.map((counter, index) => (
-              <li className={classes["counters-list-element"]} key={index}>
+              <li className={classes.countersListElement} key={index}>
                 <CounterContainer
                   handleIncrement={handleIncrement}
                   handleDecrement={handleDecrement}
@@ -41,7 +41,7 @@ class CounterParent extends React.Component {
             ))}
           </ul>
         </div>
-        <div className={classes["counter-control-panel"]}>
+        <div className={classes.counterControlPanel}>
           <Button
             variant="outlined"
             color="primary"
