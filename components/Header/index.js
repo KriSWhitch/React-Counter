@@ -36,6 +36,13 @@ const Header = (props) => {
         >
           Authorization Redux
         </NavLink>
+        <NavLink
+          to="/login-redux-form"
+          className={classes.buttonLink}
+          activeClassName={classes.buttonLinkActive}
+        >
+          Authorization Redux Form
+        </NavLink>
       </div>
     </div>
   );

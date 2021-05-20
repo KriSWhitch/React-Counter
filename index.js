@@ -10,6 +10,7 @@ import ErrorPage from "./components/ErrorPage/index";
 import Counters from "./components/Counters/index";
 import Authorization from "./components/Authorization/index";
 import AuthorizationReduxContainer from "./containers/AuthorizationReduxContainer";
+import AuthorizationReduxFormContainer from "./containers/AuthorizationReduxFormContainer";
 import AuthorizationSuccessContainer from "./containers/AuthorizationSuccessContainer";
 import rootReducer from "./redux/reducers";
 
@@ -30,7 +31,16 @@ ReactDOM.render(
           component={AuthorizationReduxContainer}
         />
         <Route
+          exact
+          path="/login-redux-form"
+          component={AuthorizationReduxFormContainer}
+        />
+        <Route
           path="/login-redux/success"
+          component={AuthorizationSuccessContainer}
+        />
+        <Route
+          path="/login-redux-form/success"
           component={AuthorizationSuccessContainer}
         />
         <Route path="*" component={ErrorPage} />
