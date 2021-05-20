@@ -1,7 +1,8 @@
+import { handleActions } from "redux-actions";
 import {
-  ACTION_CHANGE_EMAIL,
-  ACTION_CHANGE_PASSWORD,
-  ACTION_CHANGE_CONFIRM_PASSWORD,
+  setEmailText,
+  setPasswordText,
+  setConfirmPasswordText,
 } from "./actions";
 
 const initialState = {
@@ -10,15 +11,17 @@ const initialState = {
   confirmPassword: "",
 };
 
-export const authReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ACTION_CHANGE_EMAIL:
-      return { ...state, email: action.payload };
-    case ACTION_CHANGE_PASSWORD:
-      return { ...state, password: action.payload };
-    case ACTION_CHANGE_CONFIRM_PASSWORD:
-      return { ...state, confirmPassword: action.payload };
-    default:
-      return state;
-  }
-};
+export const authReducer = handleActions(
+  {
+    [setEmailText](state, { payload }) {
+      return { ...state, email: payload };
+    },
+    [setPasswordText](state, { payload }) {
+      return { ...state, password: payload };
+    },
+    [setConfirmPasswordText](state, { payload }) {
+      return { ...state, confirmPassword: payload };
+    },
+  },
+  initialState
+);
